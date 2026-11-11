@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: stockpyme-db
+    environment:
+      POSTGRES_USER: stockpyme
+      POSTGRES_PASSWORD: stockpyme
+      POSTGRES_DB: stockpyme
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
