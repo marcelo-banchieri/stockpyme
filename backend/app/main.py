@@ -3,11 +3,12 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.routers import categorias
+from app.routers import categorias, proveedores
 
 app = FastAPI(title="StockPyme")
 
 app.include_router(categorias.router)
+app.include_router(proveedores.router)
 
 
 @app.get("/salud")
